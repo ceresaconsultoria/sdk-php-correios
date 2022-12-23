@@ -1,0 +1,32 @@
+{
+    "name": "ceresaconsultoria/sdk-php-correios",
+    "description": "SDK PHP >=7.4 da nova api dos correios",
+    "keywords": ["api", "library", "psr-4", "correios", "sdk"],
+    "homepage": "https://github.com/ceresaconsultoria/sdk-php-correios",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Weslley Ceresa",
+            "email": "ceresaconsultoria@gmail.com",
+            "homepage": "https://www.mobilestores.app"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "CR\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": []
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "victorjonsson/markdowndocs": "^1.3"
+    }
+}
