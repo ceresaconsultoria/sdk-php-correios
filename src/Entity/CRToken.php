@@ -14,16 +14,16 @@ namespace CR\Entity;
  * @author weslley
  */
 class CRToken {
-    private $ambiente;
-    private $id;
-    private $ip;
-    private $perfil;
-    private $cnpj;
-    private $cartaoPostagem;
-    private $emissao;
-    private $expiraEm;
-    private $zoneOffset;
-    private $token;
+    public $ambiente;
+    public $id;
+    public $ip;
+    public $perfil;
+    public $cnpj;
+    public $cartaoPostagem;
+    public $emissao;
+    public $expiraEm;
+    public $zoneOffset;
+    public $token;
     
     public function __construct($jsonText = '') {
         if($jsonText){
