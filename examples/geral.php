@@ -8,7 +8,7 @@ require __DIR__ . "/../vendor/autoload.php";
 
 $apiAutorizacao = new \CR\Autorizacao();
 
-$token = $apiAutorizacao->cartaoPostagem('150318correios', 'xrNtNEg7vhk5f9n', '0075081474');
+$token = $apiAutorizacao->cartaoPostagem('-', '-', '-');
 
 //--
 
