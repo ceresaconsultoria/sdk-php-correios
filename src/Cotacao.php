@@ -319,4 +319,60 @@ class Cotacao extends CRController{
             throw new CRException($ex);
         }
     }
+    
+    public function precoServicosAdicionais($produto, array $data){
+        try{
+            $response = $this->http->get(sprintf('preco/v1/servicos-adicionais/%s', $produto), array(
+                "headers" => [
+                    "Authorization" => $this->getToken()->getToken(),
+                ],
+                "query" => $data,
+            ));
+
+            $body = (string)$response->getBody();
+                        
+            return json_decode($body);
+            
+        } catch (ServerException $ex) {
+            
+            $body = (string)$ex->getResponse()->getBody();
+            
+            $bodyDecoded = json_decode($body);
+            
+            if(isset($bodyDecoded->msgs)){
+                throw CRException::fromObjectMessage($bodyDecoded->msgs, $ex->getCode(), $ex->getPrevious());
+            }
+            
+            throw CRException::fromObjectMessage('[ServerException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+                        
+        } catch (ClientException $ex) {
+            
+            $body = (string)$ex->getResponse()->getBody();
+            
+            $bodyDecoded = json_decode($body);
+            
+            if(isset($bodyDecoded->msgs)){
+                throw CRException::fromObjectMessage($bodyDecoded->msgs, $ex->getCode(), $ex->getPrevious());
+            }
+            
+            throw CRException::fromObjectMessage('[ClientException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+            
+        } catch (BadResponseException $ex) {
+            
+            $body = (string)$ex->getResponse()->getBody();
+            
+            $bodyDecoded = json_decode($body);
+            
+            if(isset($bodyDecoded->msgs)){
+                
+                throw CRException::fromObjectMessage($bodyDecoded->msgs, $ex->getCode(), $ex->getPrevious());
+                
+            }
+            
+            throw CRException::fromObjectMessage('[BadResponseException] ' . $ex->getMessage(), $ex->getCode(), $ex->getPrevious());
+            
+        } catch (Exception $ex) {
+            throw new CRException($ex);
+        }
+    }
 }
