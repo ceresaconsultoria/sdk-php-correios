@@ -10,8 +10,6 @@ $apiAutorizacao = new \CR\Autorizacao();
 
 $token = $apiAutorizacao->cartaoPostagem('-', '-', '-');
 
-//--
-
 $apiCotacao = new \CR\Cotacao();
 
 $apiCotacao->setToken($token);

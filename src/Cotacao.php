@@ -94,7 +94,7 @@ class Cotacao extends CRController{
         } catch (Exception $ex) {
             throw new CRException($ex);
         }
-    }
+    } 
     
     public function simularPreco($produto, array $data){
         try{
