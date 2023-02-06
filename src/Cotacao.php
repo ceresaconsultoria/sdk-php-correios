@@ -87,7 +87,7 @@ class Cotacao extends CRController{
 
             foreach($simularPrazoResponse as $simularPrazo){            
                 $simularPrazoArr = (array)$simularPrazo;
-                $out[$simularPreco->coProduto] = array_merge($out[$simularPreco->coProduto], $simularPrazoArr);
+                $out[$simularPrazo->coProduto] = array_merge($out[$simularPrazo->coProduto], $simularPrazoArr);
             }
 
             return $out;

@@ -82,7 +82,7 @@ class CRToken {
     }
 
     public function getToken() {
-        return $this->token;
+        return 'Bearer '.$this->token;
     }
 
     public function setAmbiente($ambiente) {

@@ -19,26 +19,30 @@ $apiCotacao->setToken($token);
 try{
     $simulacao = $apiCotacao->simularPrecoPrazo([
         [
-            'coProduto' => '03220',
-            'cepDestino' => '71930000',
-            'cepOrigem' => '70902000',
-            'psObjeto' => '300',
-            'tpObjeto' => '2',
-            'comprimento' => '20',
-            'largura' => '20',
-            'altura' => '20',
-//            'servicosAdicionais' => [
-//                [
-//                    'coServAdicional' => '019'
-//                ],
-//                [
-//                    'coServAdicional' => '001'
-//                ],
-//            ],
-            'vlDeclarado' => 0,
-            'nuRequisicao' => 1
-        ]
-    ]);
+              "coProduto" => "XXXXX", 
+              "cepDestino" => "50010040", 
+              "cepOrigem" => "19026460", 
+              "psObjeto" => "200.000", 
+              "tpObjeto" => "2", 
+              "comprimento" => 30, 
+              "largura" => 20, 
+              "altura" => 5, 
+              "vlDeclarado" => "0", 
+              "nuRequisicao" => 1 
+           ], 
+        [
+                 "coProduto" => "XXXXXX", 
+                 "cepDestino" => "50010040", 
+                 "cepOrigem" => "19026460", 
+                 "psObjeto" => "200.000", 
+                 "tpObjeto" => "2", 
+                 "comprimento" => 30, 
+                 "largura" => 20, 
+                 "altura" => 5, 
+                 "vlDeclarado" => "0", 
+                 "nuRequisicao" => 1 
+              ] 
+     ]);
 
     \CR\Helper\CRHelper::dump($simulacao);
 } catch (\Exception $ex) {
