@@ -131,7 +131,7 @@ class CRToken {
     }
 
     public function setToken($token) {
-        $this->token = 'Bearer ' . $token;
+        $this->token = $token;
         return $this;
     }
 }
