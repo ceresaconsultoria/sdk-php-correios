@@ -74,10 +74,10 @@ class Cotacao extends CRController{
                 'idLote' => 1,
                 'parametrosProduto' => $data,
             ]);
-
+                        
             $simularPrazoResponse = $this->simularPrazoLote([
                 'idLote' => 1,
-                'parametrosProduto' => $data,
+                'parametrosPrazo' => $data,
             ]);
 
             foreach($simularPrecoResponse as $simularPreco){            
